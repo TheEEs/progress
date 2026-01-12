@@ -4,7 +4,7 @@ class ProgressBar
   property complete, incomplete, step, width, total, output_stream : IO::FileDescriptor
   getter current
 
-  def initialize(@total = 100, @step = 1, @width = 100, @complete = "\u2593", @incomplete = "\u2591", use_stdout = false)
+  def initialize(@total = 100_u64, @step = 1, @width = 100, @complete = "\u2593", @incomplete = "\u2591", use_stdout = false)
     @current = 0.0
     @output_stream = use_stdout ? STDOUT : STDERR
   end
